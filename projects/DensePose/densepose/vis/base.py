@@ -50,9 +50,11 @@ class MatrixVisualizer:
             )
         matrix_scaled_8u = matrix_scaled.clip(0, 255).astype(np.uint8)
         matrix_vis = cv2.applyColorMap(matrix_scaled_8u, self.cmap)
+        black_bg = np.zeros_like(image_target_bgr)
+        image_target_bgr = black_bg
         matrix_vis[mask_bg] = image_target_bgr[y : y + h, x : x + w, :][mask_bg]
         image_target_bgr[y : y + h, x : x + w, :] = (
-            image_target_bgr[y : y + h, x : x + w, :] * (1.0 - self.alpha) + matrix_vis * self.alpha
+            image_target_bgr[y : y + h, x : x + w, :]+ matrix_vis
         )
         return image_target_bgr.astype(np.uint8)
 
