@@ -12,11 +12,11 @@
 gcc & g++ ≥ 5.4 are required. [ninja](https://ninja-build.org/) is optional but recommended for faster build.
 After having them, run:
 ```
-python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+python -m pip install 'git+https://github.com/tanayag/detectron2.git'
 # (add --user if you don't have permission)
 
 # Or, to install it from a local clone:
-git clone https://github.com/facebookresearch/detectron2.git
+git clone https://github.com/tanayag/detectron2.git
 python -m pip install -e detectron2
 
 # On macOS, you may need to prepend the above commands with a few environment variables:
